@@ -1594,6 +1594,7 @@
     <Content Include="Views\Suporte\Detalhes2.cshtml" />
     <Content Include="Views\Suporte\IPN.cshtml" />
     <Content Include="Views\Suporte\Solicitar.cshtml" />
+    <Content Include="Views\Suporte\BackupIndx.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
