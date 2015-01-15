@@ -5,7 +5,7 @@
 <html lang="en">
 <!--<![endif]-->
 <!-- Head BEGIN -->
-<head> 
+<head>
     <meta charset="utf-8">
     <title>Metronic Frontend</title>
 
@@ -61,8 +61,12 @@
                 <!-- BEGIN TOP BAR MENU -->
                 <div class="col-md-6 col-sm-6 additional-nav">
                     <ul class="list-unstyled list-inline pull-right">
-                        <li><a href="/Account/Login">Entrar</a></li>
-                        <li><a href="/Account/Register">Registrar</a></li>
+                        <li><a href="/Account/MinhaConta" class="inline-block">Minha Conta</a></li>
+                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @class = "inline-block", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <li><button type="submit" class="acustomizado btn-link" style="">Sair</button></li>
+                        }
                     </ul>
                 </div>
                 <!-- END TOP BAR MENU -->
@@ -78,11 +82,11 @@
             <!-- BEGIN NAVIGATION -->
             <div class="header-navigation pull-right font-transform-inherit">
                 <ul>
-                    <li><a href="/Home/Index">Início</a></li>
-                    <li><a href="/Home/Sobre">Sobre</a></li>
-                    <li><a href="onepage-index.html">Serviços</a></li>
-                    <li><a href="onepage-index.html">Depoimentos</a></li>
-                    <li><a href="onepage-index.html">Contato</a></li>
+                    <li><a href="/Suporte/Acompanhar">Acompanhar</a></li>
+                    <li><a href="/Suporte/Solicitar">Solicitar</a></li>
+                    <li><a href="/Pagamento/Pagamento">Pagamento</a></li>
+                    <li><a href="/Contato/Index">Contato</a></li>
+                    <li><a href="/Administracao/ListaSuporte">Administração</a></li>
                 </ul>
             </div>
             <!-- END NAVIGATION -->
