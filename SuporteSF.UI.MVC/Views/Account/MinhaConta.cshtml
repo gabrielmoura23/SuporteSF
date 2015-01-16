@@ -1,6 +1,7 @@
 ﻿@model SuporteSF.UI.MVC.ViewModels.RegisterViewModel
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/_LayoutInterno.cshtml";
 }
 <div class="main">
     <div class="container">
@@ -13,14 +14,14 @@
             <!-- END SIDEBAR -->
             <!-- BEGIN CONTENT -->
             <div class="col-md-9 col-sm-9">
-                <h1>Registrar</h1>
+                <h1>Minha Conta</h1>
                 <div class="content-form-page">
                     <div class="row">
                         <div class="col-md-7 col-sm-7">
                             @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                             {
                                 @Html.AntiForgeryToken()
-                                <h4>Criar uma nova conta.</h4>
+                                <h4>Alterar dados da conta.</h4>
                                 <hr />
                                 @Html.ValidationSummary("", new { @class = "text-danger" })
                                 <fieldset>
@@ -55,7 +56,7 @@
                                 </fieldset>
                                 <div class="row">
                                     <div class="col-lg-8 col-md-offset-4 padding-left-0 padding-top-20">
-                                        <button type="submit" class="btn btn-primary">Criar conta</button>
+                                        <button type="submit" class="btn btn-primary">Alterar</button>
                                         <button type="reset" class="btn btn-default">Cancelar</button>
                                     </div>
                                 </div>
@@ -70,3 +71,4 @@
         <!-- END SIDEBAR & CONTENT -->
     </div>
 </div>
+

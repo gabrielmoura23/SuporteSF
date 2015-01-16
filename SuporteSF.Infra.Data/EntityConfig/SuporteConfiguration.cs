@@ -69,9 +69,9 @@ namespace SuporteSF.Infra.Data.EntityConfig
             //public string Status { get; set; }
             //public bool FlgTermoAceito { get; set; }
             //public System.DateTime DtAbertura { get; set; }
-            //public int IdUsuarioCadastro { get; set; }
+            //public Guid IdUsuarioCadastro { get; set; }
             //public System.Nullable<System.DateTime> DtAlteracao { get; set; }
-            //public string GuidUsuarioAlteracao { get; set; }
+            //public string IdUsuarioAlteracao { get; set; }
             //public System.Nullable<System.DateTime> DtAtendimento { get; set; }
             //public System.Nullable<System.DateTime> DtFechamento { get; set; }
             //public string DescricaoSolucao { get; set; }

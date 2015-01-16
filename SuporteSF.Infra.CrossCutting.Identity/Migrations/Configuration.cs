@@ -9,7 +9,7 @@ namespace SuporteSF.Infra.CrossCutting.Identity.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(SuporteSF.Infra.CrossCutting.Identity.Context.IdentityContext context)

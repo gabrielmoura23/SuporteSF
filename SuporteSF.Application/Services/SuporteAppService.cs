@@ -73,6 +73,21 @@ namespace SuporteSF.Application.Services
             Commit();
         }
 
+        public ValidationAppResult CancelarSuporte(SuporteViewModel modelViewModel, Guid IdUsuarioAlteracao)
+        {
+            var model = Mapper.Map<SuporteViewModel, Suporte>(modelViewModel);
+
+            BeginTransaction();
+
+            var result = _modelService.CancelarSuporte(model, IdUsuarioAlteracao);
+            if (!result.IsValid)
+                return DomainToApplicationResult(result);
+
+            Commit();
+
+            return DomainToApplicationResult(result);
+        }
+
         public void Dispose()
         {
             _modelService.Dispose();

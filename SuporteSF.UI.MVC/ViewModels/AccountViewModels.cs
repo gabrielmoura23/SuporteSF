@@ -78,37 +78,23 @@ namespace SuporteSF.UI.MVC.ViewModels
 
     public class RegisterViewModel
     {
-        [Required]
-        [EmailAddress]
-        [Display(Name = "E-mail")]
+        [Required(ErrorMessage = "Campo 'E-mail' é obrigatório.")]
+        [EmailAddress(ErrorMessage = "Campo 'E-mail' é inválido.")]
+        [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required]
-        [Display(Name = "Name")]
-        public string Name { get; set; }
+        [Required(ErrorMessage = "Campo 'Nome' é obrigatório.")]
+        public string Nome { get; set; }
 
-        [Required]
-        [Display(Name = "Last Name")]
-        public string Lastname { get; set; }
-
-        [Required]
-        [Display(Name = "Gender")]
-        public string Gender { get; set; }
-
-        [Required]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
-        [Display(Name = "Birth Date")]
-        public DateTime BirthDate { get; set; }
-
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Required(ErrorMessage = "Campo 'Senha' é obrigatório.")]
+        [StringLength(100, ErrorMessage = "A {0} precisa ter no mínimo {2} caracteres.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Senha")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirmar Senha")]
-        [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "As senhas não se coincidem.")]
+        [Display(Name = "Confirme a Senha")]
+        [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "Senha não confere.")]
         public string ConfirmPassword { get; set; }
     }
 

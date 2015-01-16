@@ -15,51 +15,52 @@ namespace SuporteSF.Application.ViewModels
         [Key]
         public int IdSuporte { get; set; }
 
-        [Required(ErrorMessage = "Preencha o campo Descrição")]
-        [MinLength(10, ErrorMessage = "Mínimo {0} caracteres")]
-        [DisplayName("Descrição")]
+        [Required(ErrorMessage = "Preencha o campo [{0}]")]
+        [DisplayName("Descrição do Problema")]
         public string Descricao { get; set; }
 
-        [Required(ErrorMessage = "Preencha o campo Sistema Operacional")]
-        [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
+        [Required(ErrorMessage = "Preencha o campo [{0}]")]
+        [MaxLength(100, ErrorMessage = "Máximo 100 caracteres para o campo [{0}]")]
         [DisplayName("Sistema Operacional")]
         public string SistemaOperacional { get; set; }
 
-        [Required(ErrorMessage = "Preencha o campo Problema Recorrente")]
-        [MaxLength(50, ErrorMessage = "Máximo {0} caracteres")]
+        [Required(ErrorMessage = "Preencha o campo [{0}]")]
+        [MaxLength(50, ErrorMessage = "Máximo 50 caracteres para o campo [{0}]")]
         [DisplayName("Problema Recorrente?")]
         public string ProblemaRecorrente { get; set; }
 
-        [Required(ErrorMessage = "Preencha o campo Prioridade")]
-        [MaxLength(50, ErrorMessage = "Máximo {0} caracteres")]
+        [Required(ErrorMessage = "Preencha o campo [{0}]")]
+        [MaxLength(50, ErrorMessage = "Máximo 50 caracteres para o campo [{0}]")]
         [DisplayName("Prioridade")]
         public string Prioridade { get; set; }
 
-        [Required(ErrorMessage = "Preencha o campo E-mail")]
-        [MaxLength(200, ErrorMessage = "Máximo {0} caracteres")]
+        [Required(ErrorMessage = "Preencha o campo [{0}]")]
+        [MaxLength(200, ErrorMessage = "Máximo 200 caracteres para o campo [{0}]")]
         [EmailAddress(ErrorMessage = "Preencha um E-mail válido")]
         [DisplayName("E-mail")]
         public string Email { get; set; }
 
-        [MaxLength(2, ErrorMessage = "Máximo {0} caracteres")]
+        [Required(ErrorMessage = "Preencha o campo [{0}]")]
+        [MaxLength(2, ErrorMessage = "Máximo 2 caracteres para o campo [{0}]")]
         [DisplayName("DDD Telefone")]
         public string DddTelefone { get; set; }
 
-        [MaxLength(15, ErrorMessage = "Máximo {0} caracteres")]
+        [Required(ErrorMessage = "Preencha o campo [{0}]")]
+        [MaxLength(15, ErrorMessage = "Máximo 15 caracteres para o campo [{0}]")]
         [DisplayName("Telefone")]
         public string Telefone { get; set; }
 
-        [Required(ErrorMessage = "Preencha o campo Melhor Horário de Atendimento")]
-        [MaxLength(255, ErrorMessage = "Máximo {0} caracteres")]
+        [Required(ErrorMessage = "Preencha o campo [{0}]")]
+        [MaxLength(255, ErrorMessage = "Máximo 255 caracteres para o campo [{0}]")]
         [DisplayName("Melhor Horário de Atendimento")]
         public string MelhorHorarioAtendimento { get; set; }
 
-        [Required(ErrorMessage = "Preencha o campo Status")]
-        [MaxLength(50, ErrorMessage = "Máximo {0} caracteres")]
+        [Required(ErrorMessage = "Preencha o campo [{0}]")]
+        [MaxLength(50, ErrorMessage = "Máximo 50 caracteres para o campo [{0}]")]
         [DisplayName("Status")]
         public string Status { get; set; }
 
-        [Required(ErrorMessage = "Preencha o campo Termo Aceito")]
+        [Required(ErrorMessage = "Preencha o campo [{0}]")]
         [DisplayName("Termo Aceito?")]
         public bool FlgTermoAceito { get; set; }
 
@@ -67,9 +68,9 @@ namespace SuporteSF.Application.ViewModels
         [DisplayName("Data de Abertura")]
         public DateTime DtAbertura { get; set; }
 
-        public int IdUsuarioCadastro { get; set; }
+        public Guid IdUsuarioCadastro { get; set; }
         public System.Nullable<System.DateTime> DtAlteracao { get; set; }
-        public Guid GuidUsuarioAlteracao { get; set; }
+        public Guid IdUsuarioAlteracao { get; set; }
 
         [DisplayName("Data de Atendimento")]
         public System.Nullable<System.DateTime> DtAtendimento { get; set; }

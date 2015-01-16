@@ -14,5 +14,6 @@ namespace SuporteSF.Application.Interfaces
         void Update(SuporteViewModel modelViewModel);
         void Remove(SuporteViewModel modelViewModel);
         IEnumerable<SuporteViewModel> BuscarPorDescricao(string descricao);
+        ValidationAppResult CancelarSuporte(SuporteViewModel modelViewModel, Guid IdUsuarioAlteracao);
     }
 }

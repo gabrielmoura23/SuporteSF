@@ -184,10 +184,12 @@ namespace SuporteSF.UI.MVC.Controllers
                 {
                     UserName = model.Email,
                     Email = model.Email,
-                    Name = model.Name,
-                    Lastname = model.Lastname,
-                    Gender = model.Gender,
-                    BirthDate = model.BirthDate
+                    Nome = model.Nome,
+                    Sexo = "",
+                    DtNascimento = DateTime.Now
+                    //Lastname = model.Lastname,
+                    //Gender = model.Gender,
+                    //BirthDate = model.BirthDate
                 };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
@@ -539,6 +541,17 @@ namespace SuporteSF.UI.MVC.Controllers
             }
             UserManager.Update(user);
             return RedirectToAction("Index", "Home");
+        }
+
+        [AllowAnonymous]
+        public ActionResult EsqueciSenha()
+        {
+            return View();
+        }
+
+        public ActionResult MinhaConta()
+        {
+            return View();
         }
     }
 }

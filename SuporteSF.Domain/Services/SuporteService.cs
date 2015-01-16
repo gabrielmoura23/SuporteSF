@@ -63,5 +63,31 @@ namespace SuporteSF.Domain.Services
 
             return resultadoValidacao;
         }
+
+        public ValidationResult CancelarSuporte(Suporte model, Guid IdUsuarioAlteracao)
+        {
+            var resultadoValidacao = new ValidationResult();
+
+            if (!model.IsValid())
+            {
+                resultadoValidacao.AdicionarErro(model.ResultadoValidacao);
+                return resultadoValidacao;
+            }
+
+            if (model.Status != "Aberto")
+            {
+                resultadoValidacao.AdicionarErro(new ValidationError("Status não permitido para cancelamento."));
+                return resultadoValidacao;
+            }
+
+            model.Status = "Cancelado";
+            model.DtAlteracao = DateTime.Now;
+            model.DtFechamento = DateTime.Now;
+            model.IdUsuarioAlteracao = IdUsuarioAlteracao;
+            
+            base.Update(model);
+
+            return resultadoValidacao;
+        }
     }
 }

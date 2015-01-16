@@ -27,9 +27,9 @@ namespace SuporteSF.Domain.Entities
         public string Status { get; set; }
         public bool FlgTermoAceito { get; set; }
         public System.DateTime DtAbertura { get; set; }
-        public int IdUsuarioCadastro { get; set; }
+        public Guid IdUsuarioCadastro { get; set; }
         public System.Nullable<System.DateTime> DtAlteracao { get; set; }
-        public Guid GuidUsuarioAlteracao { get; set; }
+        public Guid IdUsuarioAlteracao { get; set; }
         public System.Nullable<System.DateTime> DtAtendimento { get; set; }
         public System.Nullable<System.DateTime> DtFechamento { get; set; }
         public string DescricaoSolucao { get; set; }

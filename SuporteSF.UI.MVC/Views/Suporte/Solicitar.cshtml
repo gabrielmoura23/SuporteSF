@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNet.Identity
-@model ProjetoBomNegocio.Models.Tab_Suporte
+@model SuporteSF.Application.ViewModels.SuporteViewModel
 
 @{
     Layout = "~/Views/Shared/_LayoutInterno.cshtml";
@@ -49,14 +49,14 @@
                                         @Html.AntiForgeryToken()
                                         @Html.ValidationSummary("", new { @class = "text-danger" })
                                         
-                                        @Html.HiddenFor(model => model.status, new { @Value="Aberto" })
-                                        @Html.HiddenFor(model => model.data_abertura, new { @Value=System.DateTime.Now.ToString("dd/MM/yyyy") })
-                                        @Html.HiddenFor(model => model.idusuario_cadastro, new { @Value = User.Identity.GetUserId() })
+                                        @Html.HiddenFor(model => model.Status, new { @Value = "Aberto" })
+                                        @Html.HiddenFor(model => model.DtAbertura, new { @Value = System.DateTime.Now.ToString("dd/MM/yyyy") })
+                                        @Html.HiddenFor(model => model.IdUsuarioCadastro, new { @Value = User.Identity.GetUserId() })
                   
                                         <div class="form-body">
                                             <div class="form-group">
                                                 <label>Descreva o problema com detalhes</label><span class="color-red"> *</span>
-                                                @Html.TextAreaFor(model => model.descricao, new { @class = "form-control", @rows = 3 })
+                                                @Html.TextAreaFor(model => model.Descricao, new { @class = "form-control", @rows = 3 })
                                             </div>
                                             <div class="form-group">
                                                 <label>Qual seu sistema operacional?</label>
@@ -65,11 +65,11 @@
                                                         new List<SelectListItem>
                                                         {
                                                             new SelectListItem { Text = "Windows", Value = "Windows"},
-                                                            new SelectListItem { Text = "Linus", Value = "Linux"},
+                                                            new SelectListItem { Text = "Linux", Value = "Linux"},
                                                             new SelectListItem { Text = "Mac", Value = "Mac"}
                                                         }, "Value", "Text");
                                                 }
-                                                @Html.DropDownListFor(model => model.sistema_operacional, itens_so, new { @class = "form-control" })
+                                                @Html.DropDownListFor(model => model.SistemaOperacional, itens_so, new { @class = "form-control" })
                                             </div>
                                             <div class="form-group">
                                                 <label>O problema é recorrente?</label>
@@ -81,7 +81,7 @@
                                                             new SelectListItem { Text = "Sim", Value = "Sim"}
                                                         }, "Value", "Text");
                                                 }
-                                                @Html.DropDownListFor(model => model.problema_recorrente, itens_recorrente, new { @class = "form-control" })
+                                                @Html.DropDownListFor(model => model.ProblemaRecorrente, itens_recorrente, new { @class = "form-control" })
                                             </div>
                                             <div class="form-group">
                                                 <label>Qual é a prioridade do chamado?</label>
@@ -95,24 +95,24 @@
                                                             new SelectListItem { Text = "Urgente", Value = "Urgente"}
                                                         }, "Value", "Text");
                                                 }
-                                                @Html.DropDownListFor(model => model.prioridade, itens_prioridade, new { @class = "form-control" })
+                                                @Html.DropDownListFor(model => model.Prioridade, itens_prioridade, new { @class = "form-control" })
                                             </div>
                                             <div class="form-group">
                                                 <label>Confirme seu endereço de e-mail</label><span class="color-red"> *</span>
                                                 <div class="form-group">
-                                                    @Html.TextBoxFor(model => model.email, new { @class = "form-control", @placeholder = "E-mail" })
+                                                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "E-mail" })
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label>Telefone FIXO com DDD para contato</label><span class="color-red"> *</span>
                                                 <div class="input-group">
-                                                    @Html.TextBoxFor(model => model.ddd_telefone, new { @id = "ddd_telefone", @class = "form-control input-xsmall", @placeholder = "DDD" })
-                                                    @Html.TextBoxFor(model => model.telefone, new { @id= "telefone", @class = "form-control input-small", @placeholder = "Telefone FIXO" })
+                                                    @Html.TextBoxFor(model => model.DddTelefone, new { @id = "ddd_telefone", @class = "form-control input-xsmall", @placeholder = "DDD" })
+                                                    @Html.TextBoxFor(model => model.Telefone, new { @id= "telefone", @class = "form-control input-small", @placeholder = "Telefone FIXO" })
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Escolha o melhor horário para o atendimento</label>
                                                     <div class="form-group">
-                                                        @Html.TextBoxFor(model => model.melhor_horario, new { @class = "form-control", @placeholder = "Escolha o melhor horário para o atendimento" })
+                                                        @Html.TextBoxFor(model => model.MelhorHorarioAtendimento, new { @class = "form-control", @placeholder = "Escolha o melhor horário para o atendimento" })
                                                     </div>
                                                 </div>
                                             </div>
@@ -123,7 +123,7 @@
                                             <div class="form-info">
                                                 <div class="checkbox-list">
                                                     <label>
-                                                        @Html.CheckBoxFor(model => model.flg_termo_aceito) ACEITO OS TERMOS DE SUPORTE REMOTO
+                                                        @Html.CheckBoxFor(model => model.FlgTermoAceito) ACEITO OS TERMOS DE SUPORTE REMOTO
                                                     </label>
                                                 </div>
                                             </div>

@@ -1,8 +1,7 @@
-﻿@using ProjetoBomNegocio.Models
-@using Microsoft.AspNet.Identity
+﻿@using Microsoft.AspNet.Identity
 @using Microsoft.AspNet.Identity.EntityFramework
 @using PagedList.Mvc;
-@model PagedList.IPagedList<ProjetoBomNegocio.Models.Tab_Suporte>
+@model PagedList.IPagedList<SuporteSF.Application.ViewModels.SuporteViewModel>
 
 
 @{
@@ -69,24 +68,24 @@
                                                 {
                                                     <tr>
                                                         <td>
-                                                            @Html.DisplayFor(modelItem => item.idsuporte)
+                                                            @Html.DisplayFor(modelItem => item.IdSuporte)
                                                         </td>
                                                         <td>
-                                                            @Html.DisplayFor(modelItem => item.descricao)
+                                                            @Html.DisplayFor(modelItem => item.Descricao)
                                                         </td>
                                                         <td>
-                                                            @Html.DisplayFor(modelItem => item.data_abertura)
+                                                            @Html.DisplayFor(modelItem => item.DtAbertura)
                                                         </td>
                                                         <td>
-                                                            @Html.DisplayFor(modelItem => item.status)
+                                                            @Html.DisplayFor(modelItem => item.Status)
                                                         </td>
                                                         <td class="text-left">
-                                                            @Html.ActionLink("Detalhes", "_DetalhesSuporte", "Administracao", null, new { id = @item.idsuporte, @class = "btn green btn-xs edit-person" })
+                                                            @Html.ActionLink("Detalhes", "_DetalhesSuporte", "Administracao", null, new { id = @item.IdSuporte, @class = "btn green btn-xs edit-person" })
 
                                                             @{
-                                                    if (item.status.ToUpper().Equals("ABERTO"))
+                                                    if (item.Status.ToUpper().Equals("ABERTO"))
                                                     {
-                                                        @Html.ActionLink("Cancelar", "Cancelar2", "Administracao", new { id = @item.idsuporte }, new { @class = "btn red btn-xs", onclick = "return confirm('Are you sure?');" })
+                                                        @Html.ActionLink("Cancelar", "Cancelar2", "Administracao", new { id = @item.IdSuporte }, new { @class = "btn red btn-xs", onclick = "return confirm('Are you sure?');" })
                                                     }
                                                             }
                                                         </td>

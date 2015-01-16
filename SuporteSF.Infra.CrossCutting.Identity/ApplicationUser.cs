@@ -16,10 +16,9 @@ namespace SuporteSF.Infra.CrossCutting.Identity
             Clients = new Collection<Client>();
         }
 
-        public string Name { get; set; }
-        public string Lastname { get; set; }
-        public string Gender { get; set; }
-        public DateTime BirthDate { get; set; }
+        public string Nome { get; set; }
+        public string Sexo { get; set; }
+        public System.DateTime DtNascimento { get; set; }
   
         public virtual ICollection<Client> Clients { get; set; }
 

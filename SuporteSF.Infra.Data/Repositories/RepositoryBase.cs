@@ -37,7 +37,10 @@ namespace SuporteSF.Infra.Data.Repositories
 
         public virtual TEntity GetByIdTipoInteiro(int id)
         {
-            return DbSet.Find(id);
+            //return DbSet.Find(id);
+            var entry = DbSet.Find(id);
+            Context.Entry(entry).State = EntityState.Detached;
+            return entry;
         }
 
         public virtual IEnumerable<TEntity> GetAll()
@@ -53,7 +56,8 @@ namespace SuporteSF.Infra.Data.Repositories
         public virtual void Update(TEntity obj)
         {
             var entry = Context.Entry(obj);
-            DbSet.Attach(obj);
+            if (entry.State == EntityState.Detached)
+                DbSet.Attach(obj);
             entry.State = EntityState.Modified;
         }
 

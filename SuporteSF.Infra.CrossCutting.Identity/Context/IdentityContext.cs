@@ -7,7 +7,7 @@ namespace SuporteSF.Infra.CrossCutting.Identity.Context
     public class IdentityContext : IdentityDbContext<ApplicationUser>
     {
         public IdentityContext()
-            : base("MF", throwIfV1Schema: false)
+            : base("SuporteContext", throwIfV1Schema: false)
         {
         }
 
