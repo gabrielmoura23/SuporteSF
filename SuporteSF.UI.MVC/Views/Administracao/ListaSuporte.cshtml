@@ -88,6 +88,8 @@
                                                         @Html.ActionLink("Cancelar", "Cancelar2", "Administracao", new { id = @item.IdSuporte }, new { @class = "btn red btn-xs", onclick = "return confirm('Are you sure?');" })
                                                     }
                                                             }
+
+                                                            @Html.ActionLink("Apagar", "Delete", "Administracao", new { id = @item.IdSuporte }, new { @class = "btn green btn-xs" })
                                                         </td>
                                                     </tr>
                                                 }

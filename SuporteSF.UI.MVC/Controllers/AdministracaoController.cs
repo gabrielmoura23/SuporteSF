@@ -137,5 +137,12 @@ namespace SuporteSF.UI.MVC.Controllers
 
             return RedirectToAction("ListaSuporte");
         }
+
+
+        public ActionResult Delete(int id)
+        {
+            var model = _suporteApp.GetByIdTipoInteiro(id);
+            return RedirectToAction("Delete", "Suporte", new { id = id });
+        }
     }
 }

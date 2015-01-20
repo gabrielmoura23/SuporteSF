@@ -63,6 +63,9 @@ namespace SuporteSF.Infra.Data.Repositories
 
         public virtual void Remove(TEntity obj)
         {
+            var entry = Context.Entry(obj);
+            if (entry.State == EntityState.Detached)
+                DbSet.Attach(obj);
             DbSet.Remove(obj);
         }
 

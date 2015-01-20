@@ -1647,6 +1647,8 @@
     <Content Include="Views\Account\EsqueciSenha.cshtml" />
     <Content Include="Views\Interno\Index.cshtml" />
     <Content Include="Views\Account\MinhaConta.cshtml" />
+    <Content Include="Views\Suporte\Delete.cshtml" />
+    <Content Include="Views\Administracao\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
